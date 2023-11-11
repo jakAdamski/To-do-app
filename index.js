@@ -15,27 +15,27 @@ function addTask() {
     inputBox.value = '';
     saveData();
 }
-taskList.addEventListener("click", function (e){
-    if(e.target.tagName === "LI") {
+taskList.addEventListener("click", function (e) {
+    if (e.target.tagName === "LI") {
         e.target.classList.toggle('done');
         saveData()
     }
-    else if(e.target.tagName==="SPAN"){
+    else if (e.target.tagName === "SPAN") {
         e.target.parentElement.remove();
         saveData()
     }
 
-    });
-    inputBox.addEventListener("keyup", function(pressEnter) {
-        if (pressEnter.keyCode === 13) {
-          pressEnter.preventDefault();
-          addTask();
-        }
-    })
-    function saveData(){
-        localStorage.setItem('data' , taskList.innerHTML);
+});
+inputBox.addEventListener("keyup", function (pressEnter) {
+    if (pressEnter.keyCode === 13) {
+        pressEnter.preventDefault();
+        addTask();
     }
-    function revealData() {
-        taskList.innerHTML = localStorage.getItem('data');
-    }
-    revealData();
+})
+function saveData() {
+    localStorage.setItem('data', taskList.innerHTML);
+}
+function revealData() {
+    taskList.innerHTML = localStorage.getItem('data');
+}
+revealData();

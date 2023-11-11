@@ -66,7 +66,7 @@
     text-decoration: line-through;
   }
   ul li span {
-    display: inline-block;
+
     position: relative;
     text-align: center;
     font-size: 14px;
@@ -75,8 +75,7 @@
     line-height: 30px;
     border-radius: 50%;
     margin-left: 10px;
-    overflow: hidden;
-    
+    display:inline-block;    
   }
   ul li span:hover{
     background-color:#814078;
